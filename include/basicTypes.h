@@ -29,6 +29,20 @@ namespace MissionGeometry
 		double eccentricAnomaly;
 		double meanAnomaly;
 	};
+
+	class Vector
+	{
+	public:
+		double x;
+		double y;
+		double z;
+
+		double magnitude();
+		Vector getUnitVector();
+
+		Vector operator-(const Vector& v);
+		Vector operator*(const double factor);
+	};
 }
 
 #endif

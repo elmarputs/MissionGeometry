@@ -9,8 +9,8 @@
 
 namespace MissionGeometry
 {
-	KeplerianStateVector& convertCartesianToKeplerian(CartesianStateVector &cartesianStateVector);
-	CartesianStateVector& convertKeplerianToCartesian(KeplerianStateVector &keplerianStateVector);
+	KeplerianStateVector convertCartesianToKeplerian(CartesianStateVector &cartesianStateVector);
+	CartesianStateVector convertKeplerianToCartesian(KeplerianStateVector &keplerianStateVector);
 }
 
 #endif //MISSIONGEOMETRY_COORDINATETRANSFORMATIONS_H
