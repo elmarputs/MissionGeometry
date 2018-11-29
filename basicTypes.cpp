@@ -3,6 +3,7 @@
 //
 
 #include "include/basicTypes.h"
+#include <math.h>
 
 using namespace MissionGeometry;
 

@@ -12,7 +12,6 @@ using namespace MissionGeometry;
 
 KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianStateVector &state)
 {
-	// TODO: implement Cartesian to Keplerian coordinate transformation
 	Vector R = {state.x, state.y, state.z};
 	Vector V = {state.v_x, state.v_y, state.v_z};
 	Vector H = crossProduct(R, V);
@@ -32,6 +31,10 @@ KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianState
 
 	double N_xy = sqrt(N.x * N.x + N.y * N.y);
 	kState.Omega = atan2(N.y / N_xy, N.x / N_xy);
+	if (kState.Omega < 0.0)
+	{
+		kState.Omega += 2.0*pi;
+	}
 
 	double sign;
 	if (dotProduct(crossProduct(N.getUnitVector(), E), H) > 0)
@@ -55,12 +58,39 @@ KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianState
 	}
 
 	kState.trueAnomaly = sign * acos(dotProduct(R.getUnitVector(), E.getUnitVector()));
+	if (kState.trueAnomaly < 0.0)
+	{
+		kState.trueAnomaly += 2.0*pi;
+	}
+	kState.eccentricAnomaly = 2.0 * atan(sqrt((1 - kState.e) / (1 + kState.e)) * tan(kState.trueAnomaly / 2.0));
+	kState.meanAnomaly = kState.eccentricAnomaly - kState.e * sin(kState.eccentricAnomaly);
 
 	return kState;
 }
 
 CartesianStateVector MissionGeometry::convertKeplerianToCartesian(KeplerianStateVector &state)
 {
+	const double tolerance = 0.00000001;
+
+	if (state.trueAnomaly == 0.0)
+	{
+		double E0;
+		double E = 0.5;
+		do
+		{
+			E0 = E;
+			E = E0 + (state.meanAnomaly - E0 + state.e * sin(E0)) / (1 - state.e * cos(E0));
+		}
+		while (abs(E - E0) > tolerance);
+
+		state.eccentricAnomaly = E;
+		state.trueAnomaly = 2 * atan(sqrt((1+state.e)/(1-state.e)) * tan(E/2.0));
+		if (state.trueAnomaly < 0.0)
+		{
+			state.trueAnomaly += 2.0*pi;
+		}
+	}
+
 	double r = state.a * (1 - state.e * state.e)/(1 + state.e * cos(state.trueAnomaly));
 
 	double ksi = r * cos(state.trueAnomaly);
