@@ -1,5 +1,5 @@
 //
-// Created by elmar on 20-11-18.
+// Created by Elmar Puts on 20-11-18.
 //
 
 #include "include/basicMath.h"

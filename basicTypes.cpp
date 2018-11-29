@@ -1,5 +1,7 @@
 //
-// Created by elmar on 20-11-18.
+// Created by Elmar Puts on 20-11-18.
+// This file provides the implementation of the Vector class.
+// v1.0 (29-11-2018): Vector provides methods for getting the unit vector and magnitude of a vector and overrides the standard + and * operators.
 //
 
 #include "include/basicTypes.h"
