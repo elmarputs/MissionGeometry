@@ -2,7 +2,7 @@
 // Created by elmar on 20-11-18.
 //
 
-#include "include/basicTypes.h"
+#include "basicTypes.h"
 #include <math.h>
 
 using namespace MissionGeometry;

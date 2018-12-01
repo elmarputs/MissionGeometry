@@ -2,10 +2,10 @@
 // Created by elmar on 16-11-18.
 //
 #include <math.h>
-#include "include/basicTypes.h"
-#include "include/coordinateTransformations.h"
-#include "include/constants.h"
-#include "include/basicMath.h"
+#include "basicTypes.h"
+#include "coordinateTransformations.h"
+#include "constants.h"
+#include "basicMath.h"
 
 using namespace std;
 using namespace MissionGeometry;

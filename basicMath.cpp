@@ -2,8 +2,8 @@
 // Created by elmar on 20-11-18.
 //
 
-#include "include/basicMath.h"
-#include "include/constants.h"
+#include "basicMath.h"
+#include "constants.h"
 
 double MissionGeometry::degToRad(const double degrees)
 {
