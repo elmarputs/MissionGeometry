@@ -1,10 +1,10 @@
 #include <iostream>
 #include <math.h>
 
-#include "constants.h"
-#include "basicTypes.h"
-#include "coordinateTransformations.h"
-#include "basicMath.h"
+#include "Basics/constants.h"
+#include "Basics/basicTypes.h"
+#include "CoordinateTransformations/coordinateTransformations.h"
+#include "Basics/basicMath.h"
 
 
 using namespace MissionGeometry;

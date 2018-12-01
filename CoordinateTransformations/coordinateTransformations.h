@@ -5,7 +5,7 @@
 #ifndef MISSIONGEOMETRY_COORDINATETRANSFORMATIONS_H
 #define MISSIONGEOMETRY_COORDINATETRANSFORMATIONS_H
 
-#include "basicTypes.h"
+#include "../Basics/basicTypes.h"
 
 namespace MissionGeometry
 {

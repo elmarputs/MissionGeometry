@@ -6,10 +6,10 @@
 // Note: all equations taken from AE4868 (MGOD) || all units are SI units except for length (km)
 //
 #include <math.h>
-#include "basicTypes.h"
+#include "../Basics/basicTypes.h"
 #include "coordinateTransformations.h"
-#include "constants.h"
-#include "basicMath.h"
+#include "../Basics/constants.h"
+#include "../Basics/basicMath.h"
 
 using namespace std;
 using namespace MissionGeometry;
