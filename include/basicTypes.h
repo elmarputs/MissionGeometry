@@ -1,5 +1,6 @@
 //
-// Created by elmar on 16-11-18.
+// Created by Elmar Puts on 16-11-18.
+// This file provides the declaration of the Vector class and two state vector structs (for Cartesian and Kepler states).
 //
 
 #ifndef MISSIONGEOMETRY_BASICTYPES_H

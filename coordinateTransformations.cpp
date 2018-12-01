@@ -1,5 +1,9 @@
 //
-// Created by elmar on 16-11-18.
+// Created by Elmar Puts on 16-11-18.
+// Contains functions that provide basic coordinate transformations.
+// v1.0 (29-11-2018): Kepler -> Cartesian & Cartesian -> Kepler transformations available
+//
+// Note: all equations taken from AE4868 (MGOD) || all units are SI units except for length (km)
 //
 #include <math.h>
 #include "basicTypes.h"
@@ -9,6 +13,7 @@
 
 using namespace std;
 using namespace MissionGeometry;
+
 
 KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianStateVector &state)
 {
