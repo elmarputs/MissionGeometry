@@ -5,9 +5,9 @@
 #ifndef MISSIONGEOMETRY_COORDINATETRANSFORMATIONS_H
 #define MISSIONGEOMETRY_COORDINATETRANSFORMATIONS_H
 
-#include "../Basics/basicTypes.h"
+#include "basicTypes.h"
 
-namespace MissionGeometry
+namespace missiongeometry
 {
 	KeplerianStateVector convertCartesianToKeplerian(CartesianStateVector &cartesianStateVector);
 	CartesianStateVector convertKeplerianToCartesian(KeplerianStateVector &keplerianStateVector);

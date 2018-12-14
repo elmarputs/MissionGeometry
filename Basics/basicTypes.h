@@ -6,37 +6,40 @@
 #ifndef MISSIONGEOMETRY_BASICTYPES_H
 #define MISSIONGEOMETRY_BASICTYPES_H
 
-namespace MissionGeometry
+namespace missiongeometry
 {
+	typedef double timeType;
+	typedef double stateType;
+
 	struct CartesianStateVector
 	{
-		double x;
-		double y;
-		double z;
+		stateType x;
+		stateType y;
+		stateType z;
 
-		double v_x;
-		double v_y;
-		double v_z;
+		stateType v_x;
+		stateType v_y;
+		stateType v_z;
 	};
 
 	struct KeplerianStateVector
 	{
-		double a;
-		double e;
-		double i;
-		double omega;
-		double Omega;
-		double trueAnomaly;
-		double eccentricAnomaly;
-		double meanAnomaly;
+		stateType a;
+		stateType e;
+		stateType i;
+		stateType omega;
+		stateType Omega;
+		stateType trueAnomaly;
+		stateType eccentricAnomaly;
+		stateType meanAnomaly;
 	};
 
 	class Vector
 	{
 	public:
-		double x;
-		double y;
-		double z;
+		stateType x;
+		stateType y;
+		stateType z;
 
 		double magnitude();
 		Vector getUnitVector();

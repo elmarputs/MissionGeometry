@@ -7,7 +7,7 @@
 #include "basicTypes.h"
 #include <math.h>
 
-using namespace MissionGeometry;
+using namespace missiongeometry;
 
 double Vector::magnitude()
 {

@@ -5,7 +5,7 @@
 #ifndef MISSIONGEOMETRY_CONSTANTS_H
 #define MISSIONGEOMETRY_CONSTANTS_H
 
-namespace MissionGeometry
+namespace missiongeometry
 {
 	const double pi             = 3.14159265358979;// -
 

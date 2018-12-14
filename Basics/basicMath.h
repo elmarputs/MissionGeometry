@@ -7,7 +7,7 @@
 
 #include "basicTypes.h"
 
-namespace MissionGeometry
+namespace missiongeometry
 {
 	double degToRad(const double degrees);
 
