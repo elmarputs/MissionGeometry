@@ -7,7 +7,7 @@
 
 #include "basicTypes.h"
 
-namespace MissionGeometry
+namespace missiongeometry
 {
 	KeplerianStateVector convertCartesianToKeplerian(CartesianStateVector &cartesianStateVector);
 	CartesianStateVector convertKeplerianToCartesian(KeplerianStateVector &keplerianStateVector);

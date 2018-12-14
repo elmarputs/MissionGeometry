@@ -12,10 +12,10 @@
 #include "basicMath.h"
 
 using namespace std;
-using namespace MissionGeometry;
+using namespace missiongeometry;
 
 
-KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianStateVector &state)
+KeplerianStateVector missiongeometry::convertCartesianToKeplerian(CartesianStateVector &state)
 {
 	Vector R = {state.x, state.y, state.z};
 	Vector V = {state.v_x, state.v_y, state.v_z};
@@ -26,7 +26,7 @@ KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianState
 	Vector I_z = {0.0, 0.0, 1.0};
 	Vector N = crossProduct(I_z, H);
 
-	MissionGeometry::KeplerianStateVector kState {0};
+	missiongeometry::KeplerianStateVector kState {0};
 	kState.a = 1.0 / (2.0/r - v * v / mu_Earth);
 
 	Vector E = (crossProduct(V, H))*(1/mu_Earth) - R*(1/R.magnitude());
@@ -73,7 +73,7 @@ KeplerianStateVector MissionGeometry::convertCartesianToKeplerian(CartesianState
 	return kState;
 }
 
-CartesianStateVector MissionGeometry::convertKeplerianToCartesian(KeplerianStateVector &state)
+CartesianStateVector missiongeometry::convertKeplerianToCartesian(KeplerianStateVector &state)
 {
 	const double tolerance = 0.00000001;
 
@@ -112,7 +112,7 @@ CartesianStateVector MissionGeometry::convertKeplerianToCartesian(KeplerianState
 	double n1 = sin(o) * sin(i);
 	double n2 = cos(o) * sin(i);
 
-	MissionGeometry::CartesianStateVector cState {0};
+	missiongeometry::CartesianStateVector cState {0};
 	cState.x = l1 * ksi + l2 * eta;
 	cState.y = m1 * ksi + m2 * eta;
 	cState.z = n1 * ksi + n2 * eta;
