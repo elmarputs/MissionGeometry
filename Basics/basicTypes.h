@@ -8,38 +8,38 @@
 
 namespace missiongeometry
 {
-	typedef double timeType;
-	typedef double stateType;
+	typedef double TimeType;
+	typedef double stateVariableType;
 
 	struct CartesianStateVector
 	{
-		stateType x;
-		stateType y;
-		stateType z;
+		stateVariableType x;
+		stateVariableType y;
+		stateVariableType z;
 
-		stateType v_x;
-		stateType v_y;
-		stateType v_z;
+		stateVariableType v_x;
+		stateVariableType v_y;
+		stateVariableType v_z;
 	};
 
 	struct KeplerianStateVector
 	{
-		stateType a;
-		stateType e;
-		stateType i;
-		stateType omega;
-		stateType Omega;
-		stateType trueAnomaly;
-		stateType eccentricAnomaly;
-		stateType meanAnomaly;
+		stateVariableType a;
+		stateVariableType e;
+		stateVariableType i;
+		stateVariableType omega;
+		stateVariableType Omega;
+		stateVariableType trueAnomaly;
+		stateVariableType eccentricAnomaly;
+		stateVariableType meanAnomaly;
 	};
 
 	class Vector
 	{
 	public:
-		stateType x;
-		stateType y;
-		stateType z;
+		stateVariableType x;
+		stateVariableType y;
+		stateVariableType z;
 
 		double magnitude();
 		Vector getUnitVector();

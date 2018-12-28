@@ -1,0 +1,5 @@
+set(SOURCEFILES rk4Integrator.cpp)
+
+add_library(mgIntegrators STATIC ${SOURCEFILES})
+
+SET_TARGET_PROPERTIES(mgIntegrators PROPERTIES LINKER_LANGUAGE CXX)

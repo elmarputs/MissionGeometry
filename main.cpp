@@ -6,6 +6,9 @@
 #include "Basics/coordinateTransformations.h"
 #include "Basics/basicMath.h"
 
+#include "Propagation/eulerIntegrator.h"
+#include "Propagation/rk4Integrator.h"
+
 
 using namespace missiongeometry;
 
@@ -23,6 +26,12 @@ int main()
 								 -4.4700, 1.3360, 0};
 
 	KeplerianStateVector kState2 = convertCartesianToKeplerian(cState2);
+
+	RK4Integrator< CartesianStateVector > rk4Integrator(0.01, cState2);
+
+	rk4Integrator.performIntegrationStep(1.0, cState2);
+
+	std::cout << rk4Integrator.getStepSize();
 
 	return 0;
 }

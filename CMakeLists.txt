@@ -11,6 +11,7 @@ message(STATUS "Executables are placed in: ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
 message(STATUS "Libraries are placed in: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
 
 add_subdirectory(Basics)
+add_subdirectory(Propagation)
 
 add_executable(MissionGeometry main.cpp)
-target_link_libraries(MissionGeometry mgBasics)
+target_link_libraries(MissionGeometry mgBasics mgIntegrators)
